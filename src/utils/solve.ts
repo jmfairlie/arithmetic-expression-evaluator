@@ -1,13 +1,14 @@
-import type { TContext } from '~/types'
-import evaluate from './evaluate'
-import parse from './parse'
-import preprocess from './preprocess'
-import tokenize from './tokenize'
-const solve = (expression: string, context: TContext = {}) => {
-  const tokens = tokenize(expression)
-  const chunks = preprocess(tokens)
-  const parseTree = parse(chunks)
-  return evaluate(parseTree, context)
-}
+import type { TContext } from '~/types';
+import buildTree from './buildTree';
+import evaluate from './evaluate';
+import preprocess from './preprocess';
+import tokenize from './tokenize';
 
-export default solve
+const solve = (expression: string, context: TContext = {}) => {
+  const tokens = tokenize(expression);
+  const chunks = preprocess(tokens);
+  const tree = buildTree(chunks);
+  return evaluate(tree, context);
+};
+
+export default solve;

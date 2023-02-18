@@ -71,7 +71,7 @@ takes the expression string and extracts the tokens
 2. [Preprocess](./src/utils/tokenize.ts)
 reformats the tokens array into a recursive form I arbitrarily call chunks
 
-3. [Parse](./src/utils/parse.ts)
+3. [buildTree](./src/utils/buildTree.ts)
 takes the chunks array and generates a tree structure that can be recursively evaluated
 
 4. [Evaluate](./src/utils/evaluate.ts)

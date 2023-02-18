@@ -62,7 +62,7 @@ describe('buildTree', () => {
       { row: 0, col: 4, value: '5', type: 'EXPRESSION', subtype: 'NUMBER' },
       { row: 0, col: 6, value: '/', type: 'OPERATOR', subtype: 'INOP' },
       {
-        col: 7,
+        col: 0,
         row: 0,
         value: [
           {

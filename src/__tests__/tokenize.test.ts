@@ -1,43 +1,43 @@
-import tokenize from '~/utils/tokenize'
+import tokenize from '~/utils/tokenize';
 
 describe('tokenize', () => {
-  const expr0 = '100'
-  const expr1 = '1+1'
-  const expr2 = '1     +       1'
-  const expr3 = '$VARIABLE'
-  const expr4 = '3 + 5 / ( 12 - 7) * 3 - 2'
+  const expr0 = '100';
+  const expr1 = '1+1';
+  const expr2 = '1     +       1';
+  const expr3 = '$VARIABLE';
+  const expr4 = '3 + 5 / ( 12 - 7) * 3 - 2';
 
   test(expr0, () => {
-    const expected = [{ value: '100', type: 'NUMBER', row: 0, col: 0 }]
-    const tokens = tokenize(expr0)
-    expect(tokens).toEqual(expect.arrayContaining(expected))
-  })
+    const expected = [{ value: '100', type: 'NUMBER', row: 0, col: 0 }];
+    const tokens = tokenize(expr0);
+    expect(tokens).toEqual(expect.arrayContaining(expected));
+  });
 
   test(expr1, () => {
     const expected = [
       { value: '1', type: 'NUMBER', row: 0, col: 0 },
       { value: '+', type: 'INOP', row: 0, col: 1 },
       { value: '1', type: 'NUMBER', row: 0, col: 2 },
-    ]
-    const tokens = tokenize(expr1)
-    expect(tokens).toEqual(expect.arrayContaining(expected))
-  })
+    ];
+    const tokens = tokenize(expr1);
+    expect(tokens).toEqual(expect.arrayContaining(expected));
+  });
 
   test(expr2, () => {
     const expected = [
       { value: '1', type: 'NUMBER', row: 0, col: 0 },
       { value: '+', type: 'INOP', row: 0, col: 6 },
       { value: '1', type: 'NUMBER', row: 0, col: 14 },
-    ]
-    const tokens = tokenize(expr2)
-    expect(tokens).toEqual(expect.arrayContaining(expected))
-  })
+    ];
+    const tokens = tokenize(expr2);
+    expect(tokens).toEqual(expect.arrayContaining(expected));
+  });
 
   test(expr3, () => {
-    const expected = [{ value: '$VARIABLE', type: 'VARIABLE', row: 0, col: 0 }]
-    const tokens = tokenize(expr3)
-    expect(tokens).toEqual(expect.arrayContaining(expected))
-  })
+    const expected = [{ value: '$VARIABLE', type: 'VARIABLE', row: 0, col: 0 }];
+    const tokens = tokenize(expr3);
+    expect(tokens).toEqual(expect.arrayContaining(expected));
+  });
 
   test(expr4, () => {
     const expected = [
@@ -54,9 +54,9 @@ describe('tokenize', () => {
       { value: '3', type: 'NUMBER', row: 0, col: 20 },
       { value: '-', type: 'UNOP', row: 0, col: 22 },
       { value: '2', type: 'NUMBER', row: 0, col: 24 },
-    ]
+    ];
 
-    const tokens = tokenize(expr4)
-    expect(tokens).toEqual(expect.arrayContaining(expected))
-  })
-})
+    const tokens = tokenize(expr4);
+    expect(tokens).toEqual(expect.arrayContaining(expected));
+  });
+});

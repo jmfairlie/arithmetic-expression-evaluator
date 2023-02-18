@@ -3,7 +3,7 @@ const OP_TYPES = {
   INOP: 'INOP',
   POOP: 'POOP',
   PROP: 'PROP',
-} as const
+} as const;
 
 const TOKEN_TYPES = {
   NUMBER: 'NUMBER',
@@ -13,22 +13,22 @@ const TOKEN_TYPES = {
   NL: 'NL',
   SP: 'SP',
   VARIABLE: 'VARIABLE',
-} as const
+} as const;
 
 const CHUNK_SUBTYPES = {
   ...TOKEN_TYPES,
   SUBEXPRESSION: 'SUBEXPRESSION',
-} as const
+} as const;
 
 const CHUNK_TYPES = {
   EXPRESSION: 'EXPRESSION',
   OPERATOR: 'OPERATOR',
-} as const
+} as const;
 
 export {
   executeOperator,
   opDisambiguation,
   opPrecedence,
   TOKEN_TYPE_DETECTORS,
-} from '~/config'
-export { OP_TYPES, TOKEN_TYPES, CHUNK_SUBTYPES, CHUNK_TYPES }
+} from '~/config';
+export { OP_TYPES, TOKEN_TYPES, CHUNK_SUBTYPES, CHUNK_TYPES };

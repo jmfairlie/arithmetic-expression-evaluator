@@ -72,12 +72,15 @@ describe('preprocess', () => {
       { value: '-', type: 'UNOP', row: 0, col: 22 },
       { value: '2', type: 'NUMBER', row: 0, col: 24 },
     ]
+
     const expected = [
       { row: 0, col: 0, value: '3', type: 'EXPRESSION', subtype: 'NUMBER' },
       { row: 0, col: 2, value: '+', type: 'OPERATOR', subtype: 'INOP' },
       { row: 0, col: 4, value: '5', type: 'EXPRESSION', subtype: 'NUMBER' },
       { row: 0, col: 6, value: '/', type: 'OPERATOR', subtype: 'INOP' },
       {
+        col: 8,
+        row: 0,
         value: [
           {
             row: 0,
